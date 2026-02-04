@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Sofea</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #222;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      padding: 24px;
+      box-sizing: border-box;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    .small {
+      font-size: 14px;
+      opacity: 0.65;
+      margin-bottom: 12px;
+      max-width: 420px;
+    }
+
+    .big {
+      font-size: 28px;
+      font-weight: 600;
+      margin: 16px 0;
+      max-width: 420px;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: #F4A6B9;
+      color: #fff;
+      margin: 10px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    button:hover {
+      background: #E98AA3;
+    }
+
+    .btn-light {
+      background: #F7C3D0;
+    }
+
+    img.gif {
+      max-width: 220px;
+      margin: 18px 0;
+    }
+
+    .letter {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <div class="small">Daripada Syahir</div>
+
+  <div class="big">
+    Hi sayang, saya harap kamu baik baik sahaja
+  </div>
+
+  <!-- GIF INTRO DI BAWAH AYAT BESAR -->
+  <img src="intro.gif" class="gif" alt="sweet intro gif">
+
+  <div class="small">
+    Hi Sofea, saya Noah, pembantu digital kekasih hati awak, Syahir.
+    Saya di sini nak sampaikan beberapa perkara,
+    cuba tekan butang bawah.
+  </div>
+
+  <button onclick="goToPage(2)">Cuba Tekan</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <div class="small">
+    okay sebelum kita teruskan ke bahagian penting,
+    Noah nak Sofea jawab satu soalan kat bawah ni
+  </div>
+
+  <div class="big">
+    Adakah Sofea sayang Kekasih awak?<br>
+    iaitu Syahir?
+  </div>
+
+  <div>
+    <button class="btn-light" onclick="pressNo()">NO</button>
+    <button id="yesBtn" onclick="goToPage(3)">Ya saya sayang dia</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <!-- GIF HAPPY DI ATAS SEKALI -->
+  <img src="happy.gif" class="gif" alt="happy meme gif">
+
+  <div class="big">YEAYYYY! 🥰</div>
+
+  <div class="small">
+    Kalau nak tahu Syahir sayang Sofea lebih banyak
+    daripada Sofea sayang Syahir dia cakap.
+    <br><br>
+    Ada sesuatu istimewa daripada Syahir.
+  </div>
+
+  <button onclick="goToPage(4)">Untuk Sofea</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4" style="padding:0;">
+  <img src="surat.jpg" class="letter" alt="Surat daripada Syahir">
+</div>
+
+<script>
+  function goToPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page' + n).classList.add('active');
+  }
+
+  let scale = 1;
+  function pressNo() {
+    scale += 0.1;
+    document.getElementById('yesBtn').style.transform = `scale(${scale})`;
+  }
+</script>
+
+</body>
+</html>
